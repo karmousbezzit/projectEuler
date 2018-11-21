@@ -9,8 +9,8 @@ namespace ProjectEuler.Test
         [Test]
         public void Solve_001_MultiplesOf3And5()
         {
-            var problem = new _001_MultiplesOf3And5();
-            problem.Solve().Should().Be(266333);
+            var problem = new P001MultiplesOf3And5();
+            problem.Solve().Should().Be(233168);
         }
     }
 }
