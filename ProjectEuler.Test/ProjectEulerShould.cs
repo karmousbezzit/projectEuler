@@ -12,6 +12,7 @@ namespace ProjectEuler.Test
         [TestCase(typeof(P002EvenFibonacciNumbers), 4613732)]
         [TestCase(typeof(P003LargestPrimeFactor), 6857)]
         [TestCase(typeof(P004LargestPalindromeProduct), 906609)]
+        [TestCase(typeof(P005SmallestMultiple), 232792560)]
         public void SolveProblem(Type problemType, int solution)
         {
             var problem = (IProblem)Activator.CreateInstance(problemType);
