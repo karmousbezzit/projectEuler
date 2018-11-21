@@ -1,3 +1,4 @@
+using System;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -7,10 +8,12 @@ namespace ProjectEuler.Test
     public class ProjectEulerShould
     {
         [Test]
-        public void Solve_001_MultiplesOf3And5()
+        [TestCase(typeof(P001MultiplesOf3And5), 233168)]
+        [TestCase(typeof(P002EvenFibonacciNumbers), 4613732)]
+        public void SolveProblems(Type problemType, int solution)
         {
-            var problem = new P001MultiplesOf3And5();
-            problem.Solve().Should().Be(233168);
+            var problem = (IProblem)Activator.CreateInstance(problemType);
+            problem.Solve().Should().Be(solution);
         }
     }
 }
